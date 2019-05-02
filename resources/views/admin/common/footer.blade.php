@@ -73,10 +73,10 @@
      
 
 	$(document).on('click', '.submit-btn', function(){
-        
+     
 		btn = $(this);
 		form = btn.parents('.form');
-
+     
 		if(form.find('#details').length)
 		{  
 			//ckeditor input
@@ -94,6 +94,7 @@
     }
 
 		url  = form.attr('action');
+
 		data = new FormData(form[0]);
 
 		formResults = form.find('#form-results');

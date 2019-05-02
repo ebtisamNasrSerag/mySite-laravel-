@@ -68,9 +68,9 @@
                                 <h3>{{trans('lang.project Details')}}</h3>
                                 <p>
                                 	@if(app()->getLocale() == 'ar')
-                                    {{$project['desc_ar']}}
+                                    {{strip_tags(html_entity_decode($project['desc_ar']))}}
                                     @else
-                                    {{$project['desc_en']}}
+                                    {{strip_tags(html_entity_decode($project['desc_en']))}}
                                     @endif
                                 </p>
                             </div>

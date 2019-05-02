@@ -144,6 +144,7 @@
 					$('.modal').attr('id', data.target);
 					document.getElementById("heading").innerHTML= data.heading;
 					$('.form').attr('action',data.action);
+          $('.form').attr('method','POST');
 					$('#saveBtn').html("Add Video");
 
 					$('.modal').modal('show');

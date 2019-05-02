@@ -67,9 +67,9 @@
                                     <h2>{{trans('lang.who we are')}}</h2>
                                 </div>
                                 <div class="text">@if(app()->getLocale() == 'ar')
-                                {{$site_data['about_ar']}}
+                                {{strip_tags(html_entity_decode($site_data['about_ar']))}}
                                 @else
-                                {{$site_data['about_en']}}
+                                {{strip_tags(html_entity_decode($site_data['about_en']))}}
                                 @endif</div>
                                 <div class="link-box"><a href="{{url('/about')}}" class="theme-btn btn-style-one">{{trans('lang.aboutus')}}</a></div>
                             </div>
@@ -142,9 +142,9 @@
                             </h4>
                             <div class="text">
                                 @if(app()->getLocale() == 'ar')
-                                    {{$why['desc_ar']}}
+                                    {{strip_tags(html_entity_decode($why['desc_en']))}}
                                     @else
-                                    {{$why['desc_en']}}
+                                    {{strip_tags(html_entity_decode($why['desc_en']))}}
                                     @endif
                             </div>
                         </div>

@@ -88,7 +88,7 @@
             </div>
             <div class="modal-body">
             	
-            	<form action="" class="form-modal form1" method="">
+            	<form action="" class="form-modal form" method="" enctype='multipart/form-data'>
                 
                 	<input type='hidden' id="id" name='id' class='modal_hiddenid'>
                 	{{csrf_field()}}
@@ -166,6 +166,7 @@
 					$('.modal').attr('id', data.json['target']);
 					document.getElementById("heading").innerHTML= data.json['heading'];
 					$('.form').attr('action',data.json['action']);
+          $('.form').attr('method','POST');
 					$('#saveBtn').html("Add Project");
 
           var $select = $('#cat_id');
@@ -197,7 +198,7 @@
 				url : url,
 				type : 'GET',
 				success : function(data){
-
+         //alert(data.json['target']);
           $('.modal').attr('id', data.json['target']);
 					document.getElementById("heading").innerHTML= data.json['heading'];
 					$('.form').attr('action',data.json['action']);

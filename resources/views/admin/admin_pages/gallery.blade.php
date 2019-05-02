@@ -83,7 +83,7 @@
             </div>
             <div class="modal-body">
             	
-            	<form action="" class="form-modal form" method="">
+            	<form action="" class="form-modal form" method="" enctype='multipart/form-data'>
                 
                 	<input type='hidden' id="id" name='id' class='modal_hiddenid'>
                 	{{csrf_field()}}
@@ -146,6 +146,7 @@
 					$('.modal').attr('id', data.target);
 					document.getElementById("heading").innerHTML= data.heading;
 					$('.form').attr('action',data.action);
+          $('.form').attr('method','POST');
 					$('#saveBtn').html("Add Image");
 
 					$('.modal').modal('show');

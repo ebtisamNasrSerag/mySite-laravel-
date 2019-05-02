@@ -33,7 +33,7 @@ class ProjectController extends Controller
         $json['target']  = 'add-project';
         $json['heading'] = 'Add New Project';
         $json['action']  = 'project/add';
-        return response()->json(['json' => $json,'categories' =>$categories]); 
+        return response()->json(['json' => $json,'categories' => $categories]); 
     }
 
     

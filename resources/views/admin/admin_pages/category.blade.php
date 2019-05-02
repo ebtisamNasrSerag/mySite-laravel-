@@ -27,11 +27,16 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                  @if(session()->has('message'))
+                  @if(session()->has('success'))
       				    <div class="alert alert-success">
-      				        {{ session()->get('message') }}
+      				        {{ session()->get('success') }}
       				    </div>
     				    @endif
+                @if(session()->has('error'))
+                  <div class="alert alert-danger">
+                      {{ session()->get('error') }}
+                  </div>
+                @endif
                   <table class="table table-bordered">
                     <tr>
                         <th>#</th>
@@ -85,7 +90,7 @@
             </div>
             <div class="modal-body">
             	
-            	<form action="" class="form-modal form" method="">
+            	<form action="" class="form-modal form" method="" enctype='multipart/form-data'>
                 
                 	<input type='hidden' id="id" name='id' class='modal_hiddenid'>
                 	{{csrf_field()}}
@@ -155,6 +160,7 @@
 					$('.modal').attr('id', data.target);
 					document.getElementById("heading").innerHTML= data.heading;
 					$('.form').attr('action',data.action);
+          $('.form').attr('method','POST');
 					$('#saveBtn').html("Add Category");
 					$('.modal').modal('show');
   				}

@@ -61,7 +61,7 @@
                                 </a></h4>
                                 <div class="btn-box">
                                     <a href="assets/images/gallery/2-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="project-detail.html"><i class="fa fa-external-link"></i></a>
+                                    <a href="{{url('/project_details/'.$project['id'])}}"><i class="fa fa-external-link"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 use App\Category;
+use App\Project;
 
 
 class CategoryController extends Controller
@@ -139,8 +140,15 @@ class CategoryController extends Controller
     public function category_delete($id)
     {
         $category = Category::find($id);
-        $category->delete();
-        return redirect()->back()->with('message', 'Category deleted');
+        $projects = Project::where('cat_id',$id)->get();
+        
+        if($projects->isEmpty())
+        {
+            $category->delete();
+            return redirect()->back()->with('success', 'Category deleted');
+        }
+
+        return redirect()->back()->with('error', 'Category dosn\'t Deleted Because it related to projects if you want Plz delete all it\'s projects. ');
     }
 
 }

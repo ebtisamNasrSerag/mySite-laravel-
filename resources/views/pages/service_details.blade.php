@@ -64,9 +64,9 @@
                                 <h3>{{trans('lang.service Details')}}</h3>
                                 <p>
                                     @if(app()->getLocale() == 'ar')
-                                    {{$service['desc_ar']}}
+                                    {{strip_tags(html_entity_decode($service['desc_ar']))}}
                                     @else
-                                    {{$service['desc_en']}}
+                                    {{strip_tags(html_entity_decode($service['desc_en']))}}
                                     @endif
                                 </p>
                             </div>

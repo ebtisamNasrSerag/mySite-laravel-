@@ -32,7 +32,7 @@
 				    </div>
 				 @endif
               <div class="container">
-                <form class="form" action="{{url('/admin/project/images/add')}}" class="form-modal form" method="POST">
+                <form class="form" action="{{url('/admin/project/images/add')}}" class="form-modal form" method="POST" enctype='multipart/form-data'>
                   {{csrf_field()}}
                   <div id="form-results"></div>
 

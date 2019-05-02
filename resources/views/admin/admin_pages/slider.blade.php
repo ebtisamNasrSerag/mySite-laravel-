@@ -85,7 +85,7 @@
             </div>
             <div class="modal-body">
             	
-            	<form action="" class="form-modal form" method="">
+            	<form action="" class="form-modal form" method="" enctype='multipart/form-data'>
                 
                 	<input type='hidden' id="id" name='id' class='modal_hiddenid'>
                 	{{csrf_field()}}
@@ -104,13 +104,13 @@
 
                   <div class="form-group col-sm-12">
                     <label for="title">Details In Arabic</label>
-                    <input type="text" class="form-control" id="desc_ar" 
+                    <input type="text" class="form-control" id="details_ar" 
                     name="details_ar" placeholder="details In Arabic">
                   </div>
 
                   <div class="form-group col-sm-12">
                     <label for="title">details In English</label>
-                    <input type="text" class="form-control" id="desc_en" 
+                    <input type="text" class="form-control" id="details_en" 
                     name="details_en" placeholder="details In English">
                   </div>
 
@@ -162,6 +162,7 @@
 					$('.modal').attr('id', data.target);
 					document.getElementById("heading").innerHTML= data.heading;
 					$('.form').attr('action',data.action);
+          $('.form').attr('method','POST');
 					$('#saveBtn').html("Add Slider");
 					$('.modal').modal('show');
   				}
@@ -196,13 +197,13 @@
                     
 			        $('#title_ar').val(data.title_ar);
 			        $('#title_en').val(data.title_en);
-			        $('#desc_ar').val(data.details_ar);
-			        $('#desc_en').val(data.details_en);
+			        $('#details_ar').val(data.details_ar);
+			        $('#details_en').val(data.details_en);
 			        if(data.show_details == 1)
 			        {
 			           $('#show_details').attr('checked');
 			        }else{
-			           $('#show_details').remove().attr('checked');
+			           $('#show_details').removeAttr('checked');
 			        }
                     var image_path="{{URL::asset('assets/images/')}}/";
 			        $('#img').html('<img src='+image_path+data.img+' alt="" style="width: 150px;height: 100px;">');

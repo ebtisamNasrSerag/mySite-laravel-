@@ -49,9 +49,9 @@
                             </div>
                             <div class="about-text">
                             @if(app()->getLocale() == 'ar')
-                            {{$site_data['about_ar']}}
+                            {{strip_tags(html_entity_decode($site_data['about_ar']))}}
                             @else
-                            {{$site_data['about_en']}}
+                            {{strip_tags(html_entity_decode($site_data['about_en']))}}
                             @endif
                             </div>
                         </div>

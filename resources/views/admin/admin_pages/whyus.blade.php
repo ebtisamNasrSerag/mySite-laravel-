@@ -95,14 +95,12 @@
 
                   <div class="form-group col-sm-12">
                     <label for="title">description In Arabic</label>
-                    <input type="text" class="form-control" id="desc_ar" 
-                    name="desc_ar" placeholder="description In Arabic">
+                    <textarea id="desc_ar" class="details form-control CKEDITOR validate_input" name="desc_ar" cols="30" rows="10"></textarea>
                   </div>
 
                   <div class="form-group col-sm-12">
                     <label for="title">description In English</label>
-                    <input type="text" class="form-control" id="desc_en" 
-                    name="desc_en" placeholder="description In English">
+                    <textarea id="desc_en" class="details form-control CKEDITOR validate_input" name="desc_en" cols="30" rows="10"></textarea>
                   </div>
 
                   <div class="clearfix"></div>
@@ -147,8 +145,8 @@
                     
 			        $('#title_ar').val(data.title_ar);
 			        $('#title_en').val(data.title_en);
-			        $('#desc_ar').val(data.desc_ar);
-			        $('#desc_en').val(data.desc_en);
+              CKEDITOR.instances.desc_ar.setData( data.desc_ar);
+              CKEDITOR.instances.desc_en.setData( data.desc_en);
 			        
 			        $('.modal').modal('show');
 			  	}
