@@ -1,3 +1,5 @@
+<p align="center"> just put this project on server and run it to open .you can open admin panel by adding /adminpanel to url then you will find password and username to login
+</p>
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
